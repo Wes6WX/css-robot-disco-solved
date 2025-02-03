@@ -1,41 +1,220 @@
-body {
-  background-color: #21222c;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-/* 👇👇👇 Paste the styles of your Fancy Robot from the "Position it right" assignment here 👇👇👇 */
+body {
+  background-color: #21222c;
+  display: flex;
+}
 
 .robot-container {
+  position: relative;
+  margin: 220px auto;
 }
 
 .robot-face-shape {
+  width: 250px;
+  height: 251px;
+  border: 1px solid black;
+  border-radius: 50%;
+  background-color: blue;
+  border-top: blue;
+  overflow: hidden;
 }
 
 .robot-eye-left {
+  width: 45%;
+  height: 20%;
+  border-radius: 0 0 100px 100px;
+  position: absolute;
+  top: 120px;
+  left: 10px;
+  box-shadow: inset 10px -300px;
+  transform: rotate(30deg);
+  z-index: 4;
+  overflow: hidden;
+}
+
+.pupil-left {
+  width: 15px;
+  height: 30px;
+  border: 5px solid red;
+  border-radius: 100%;
+  position: relative;
+  margin-left: auto;
+  right: 15px;
+  top: -10px;
+  transform: rotate(-30deg);
+  z-index: 4;
+  opacity: 50%;
 }
 
 .robot-eye-right {
+  width: 45%;
+  height: 20%;
+  border-radius: 0 0 100px 100px;
+  position: absolute;
+  top: 120px;
+  right: 10px;
+  box-shadow: inset -10px -300px;
+  transform: rotate(-30deg);
+  z-index: 4;
+  overflow: hidden;
+}
+
+.pupil-right {
+  width: 15px;
+  height: 30px;
+  border: 5px solid red;
+  border-radius: 100%;
+  position: relative;
+  margin-right: auto;
+  left: 15px;
+  top: -10px;
+  transform: rotate(30deg);
+  z-index: 4;
+  opacity: 50%;
+  background-image: url(https://fastly.picsum.photos/id/476/15/30.jpg?hmac=5IAnbwFvwISM4uwyfNwsH7hpg-HR_zOVmihO04eNTuU);
 }
 
 .robot-ear-left {
+  width: 0;
+  height: 0;
+  border-left: 2em solid transparent;
+  border-right: 2em solid transparent;
+  border-bottom: 4em solid tan;
+  position: absolute;
+  top: -10px;
+  left: 12px;
+  transform: rotate(-30deg);
+  z-index: 5;
+}
+
+.outer-ear-left {
+  width: 0;
+  height: 0;
+  border-left: 2.5em solid transparent;
+  border-right: 2.5em solid transparent;
+  border-bottom: 5em solid #0000de;
+  position: absolute;
+  top: -20px;
+  left: 5px;
+  transform: rotate(-30deg);
+  z-index: 4;
 }
 
 .robot-ear-right {
+  width: 0;
+  height: 0;
+  border-left: 2em solid transparent;
+  border-right: 2em solid transparent;
+  border-bottom: 4em solid tan;
+  position: absolute;
+  top: -10px;
+  right: 12px;
+  transform: rotate(30deg);
+  z-index: 5;
+}
+
+.outer-ear-right {
+  width: 0;
+  height: 0;
+  border-left: 2.5em solid transparent;
+  border-right: 2.5em solid transparent;
+  border-bottom: 5em solid #0000de;
+  position: absolute;
+  top: -20px;
+  right: 5px;
+  transform: rotate(30deg);
+  z-index: 4;
 }
 
 .robot-nose {
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 20px solid #19547b;
+  border-radius: 50% 50% 0 0;
+  position: absolute;
+  bottom: 50px;
+  left: 118px;
+  box-shadow: 0px 0px 3px 9px #ffd89b;
+  z-index: 5;
 }
 
-.robot-nose:before {
-}
-
-.robot-nose:after {
-}
-
+/* Represents the lower face rather than "teeth" */
 .robot-teeth {
+  box-shadow: inset 0 -270px 3px -200px #ffd89b;
+  width: 249px;
+  height: 250px;
+  border-radius: 100%;
+  background-color: transparent;
+  position: absolute;
+  bottom: 1px;
+  left: 0.5px;
+  z-index: 1;
 }
 
+/* Actually more like a pair of little screws in its "cheek" instead of an actual "tooth" */
 .robot-tooth {
+  display: inline-block;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 4px solid #19547b;
+  border-radius: 100%;
+  background-color: #19547b;
+  background: linear-gradient(tan 40%, #121212 50%, tan 60%);
+  position: relative;
+  bottom: -185px;
+  margin-right: 51px;
+  margin-left: 51px;
 }
 
+/* Did not make sense for my "hair" idea; repurposed as a small rectangular background light */
 .robot-hair-style {
+  box-shadow: 0 0 6rem 1rem yellow;
+}
+
+.robot-hair-one {
+  width: 0;
+  height: 0;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  border-bottom: 150px solid #00e;
+  position: absolute;
+  bottom: 0px;
+  left: -100px;
+  border-radius: 100%;
+  transform: rotate(250deg);
+  z-index: -2;
+}
+
+.robot-hair-two {
+  width: 0;
+  height: 0;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  border-bottom: 150px solid #00e;
+  position: absolute;
+  bottom: 0px;
+  right: -100px;
+  border-radius: 100%;
+  transform: rotate(110deg);
+  z-index: -2;
+}
+
+.robot-hair-three {
+  width: 0;
+  height: 0;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  border-bottom: 200px solid blue;
+  position: absolute;
+  top: -120px;
+  left: 25px;
+  border-radius: 100%;
+  z-index: -2;
 }
